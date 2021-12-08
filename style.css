@@ -47,7 +47,6 @@ body {
   list-style: none;
   top: 0;
   animation: slide 12s steps(4) infinite;
-  animation-delay: 3s;
 }
 
 .text-item::after {
@@ -72,9 +71,6 @@ body {
 }
 
 @keyframes slide {
-  0% {
-    top: 0;
-  }
   100% {
     top: -360px;
   }
