@@ -1,0 +1,81 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --yangColor: #d8c21e;
+  --yinColor: #111111;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--yangColor);
+  background-color: var(--yinColor);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden auto;
+}
+
+.text-wrapper {
+  display: flex;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.text-static {
+  color: #ffffff;
+}
+
+.text-dynamic {
+  margin-left: 30px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+}
+
+.text-item {
+  position: relative;
+  font-weight: 500;
+  color: var(--yangColor);
+  list-style: none;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+  animation-delay: 3s;
+}
+
+.text-item::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  height: 100%;
+  width: calc(100% + 30px);
+  border-left: 3px solid var(--yangColor);
+  background-color: var(--yinColor);
+  animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+  40%,
+  60% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -360px;
+  }
+}
